@@ -12,11 +12,11 @@ export default function RootLayout({ children }: {children: React.ReactNode}) {
       <Layout hasSider>
       <Sidebar />
         <Layout className="site-layout" style={{ marginLeft: 200 }}>
-        <Content style={{ margin: '20px 20px 0px 20px', overflow: 'initial' }}>
-        <div style={{background: '#dedede'}}>
-        {children}
-        </div>
-        </Content>
+          <Content style={{ margin: '20px 20px 0px 20px', overflow: 'initial' }}>
+            <div>
+              {children}
+            </div>
+          </Content>
         </Layout>
       </Layout>
       </body>
