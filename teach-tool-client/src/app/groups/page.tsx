@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import ViewGroup from './viewGroup';
+import React from 'react';
+import GroupBody from './groupBody';
+import GroupViewBox from './groupViewBox';
 
 const boxStyle: React.CSSProperties = {
     width: '100%',
@@ -13,19 +14,12 @@ const Groups : React.FC = () => {
                 <div className='card-body'>
                     <div className='row'>
                         <div className='col-md-3'>
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
-                            <ViewGroup />
+                            <GroupViewBox />
                         </div>
                         <div className='col-md-9'>
-
+                            <div style={{backgroundColor: '#001529', borderRadius: '5px', padding: '10px', marginBottom: '2px', height: '100%', maxHeight: '100%'}}>
+                                <GroupBody />
+                            </div>
                         </div>
                     </div>
                 </div>

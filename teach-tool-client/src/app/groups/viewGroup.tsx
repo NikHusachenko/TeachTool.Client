@@ -6,7 +6,7 @@ type ViewGroupProps ={
 
 const ViewGroup : React.FC<ViewGroupProps> = () => {
     return(
-        <div style={{backgroundColor: '#001529', borderRadius: '5px', padding: '5px', marginBottom: '2px'}}>
+        <div style={{backgroundColor: '#001529', borderRadius: '5px', padding: '10px', marginBottom: '2px'}}>
             <div className="row">
                 <div style={{width: 'auto'}}>
                     <Image alt="grop" src={'next.svg'} preview={false} style={{background: '#fafafa', width: '50px', height: '50px', borderRadius: '25px', border: '1px solid #dedede' }} />
