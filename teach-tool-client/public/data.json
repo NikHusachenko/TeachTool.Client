@@ -1,0 +1,47 @@
+{
+    "users": [
+      {
+        "FirstName": "John",
+        "LastName": "Doe",
+        "MiddleName": "Smith",
+        "Email": "john.doe@example.com",
+        "Login": "john_doe",
+        "Password": "password123"
+      },
+      {
+        "FirstName": "Jane",
+        "LastName": "Doe",
+        "MiddleName": "Doe",
+        "Email": "jane.doe@example.com",
+        "Login": "jane_doe",
+        "Password": "securepass"
+      },
+      {
+        "FirstName": "Bob",
+        "LastName": "Smith",
+        "MiddleName": "Johnson",
+        "Email": "bob.smith@example.com",
+        "Login": "bob_smith",
+        "Password": "pass123"
+      }
+    ],
+
+    "messages": [
+        {
+          "id": 1,
+          "sender": "John Doe",
+          "content": "Hello, how are you?"
+        },
+        {
+          "id": 2,
+          "sender": "Jane Doe",
+          "content": "I'm doing well, thank you!"
+        },
+        {
+          "id": 3,
+          "sender": "Bob Smith",
+          "content": "What's the weather like today?"
+        }
+      ]
+
+  }
