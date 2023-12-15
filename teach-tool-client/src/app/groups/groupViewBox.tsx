@@ -6,7 +6,7 @@ type GroupViewBoxProps = {
 
 const GroupViewBox : React.FC<GroupViewBoxProps> = () => {
     return(
-        <div style={{height: '100em', overflowY: 'auto', overflowX: 'hidden'}}>
+        <div style={{height: '90vh', overflowY: 'auto', overflowX: 'hidden'}}>
             <ViewGroup />
             <ViewGroup />
             <ViewGroup />
