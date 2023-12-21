@@ -6,7 +6,7 @@ import GroupViewBox from './groupViewBox';
 
 const boxStyle: React.CSSProperties = {
     width: '100%',
-    height: '100vh',
+    maxHeight: '80vh',
 };
 
 const Groups : React.FC = () => {
@@ -16,10 +16,12 @@ const Groups : React.FC = () => {
                 <div className='card-body'>
                     <div className='row'>
                         <div className='col-md-3'>
-                            <GroupViewBox />
+                            <div style={{backgroundColor: '#001529', borderRadius: '5px', padding: '10px', marginBottom: '2px', height: '100%', maxHeight: '100%'}}>
+                                <GroupViewBox />
+                            </div>
                         </div>
                         <div className='col-md-9'>
-                            <div style={{backgroundColor: '#001529', borderRadius: '5px', padding: '10px', marginBottom: '2px', height: '100%', maxHeight: '100%'}}>
+                            <div style={{backgroundColor: '#001529', borderRadius: '5px', marginBottom: '2px', height: '100%', maxHeight: '100%'}}>
                                 <GroupBody />
                             </div>
                         </div>

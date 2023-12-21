@@ -1,0 +1,55 @@
+{
+    "groups": 
+    [
+        {
+            "imagePath": "next.svg",
+            "title": "Title 1",
+            "message": "Hello, world!"
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Interesting Event",
+            "message": "This marks the beginning of something important."
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Time Travel",
+            "message": "Are you ready to journey into the past?"
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Encounter the Unknown",
+            "message": "Get ready for an adventure."
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Unravel the Mystery",
+            "message": "The answer lies within you."
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Exploration Knows No Bounds",
+            "message": "Where the world ends, adventure begins."
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Journey in Dreams",
+            "message": "Your imagination is your guide."
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Secrets of the Universe",
+            "message": "The more you know, the more you understand."
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Quest for Truth",
+            "message": "Truth is somewhere nearby."
+        },
+        {
+            "imagePath": "next.svg",
+            "title": "Adventure Awaits",
+            "message": "Your next adventure has already begun."
+        }
+    ]    
+}

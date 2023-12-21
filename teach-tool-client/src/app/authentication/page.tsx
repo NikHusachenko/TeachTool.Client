@@ -44,35 +44,45 @@ const AuthenticationPage : React.FC = () => {
         password: ''
     })
 
+    const handleLoginInputChange = (inputName: string, inputValue: string) => {
+        setLoginState(prevState => ({ ...prevState, [inputName]: inputValue }));
+        console.log(loginState)
+    };
+
+    const handleRegistrationInputChange = (inputName: string, inputValue: string) => {
+        setRegState(prevState => ({ ...prevState, [inputName]: inputValue }));
+        console.log(registrationState)
+    };
+
     const toggleAuthenticationType = () => {
         setAuthType(authType === AuthType.Login ? AuthType.Registration : AuthType.Login);
     }
 
-    // const handleAuthentication = async (authType: AuthType) => {
-    //     let requestData = JSON.stringify({ 
-    //         FirstName: "Nik",
-    //         LastName: "Faraday",
-    //         MiddleName: "Serhiyovish",
-    //         Birthday: "23.05.2023",
-    //         Email: "nikgusachenko@gmail.com",
-    //         Phone: "380674906517",
-    //         Login: "NHusachenko",
-    //         Password: "1111",
-    //     })
-    //     console.log(requestData);
-    //     let response = await fetch('https://localhost:7155/api/Authentication/SignUp', {
-    //         method: 'post',
-    //         headers: {
-    //             'Accept': '*/*',
-    //             'Host': "http://localhost:3000",
-    //             'Content-Type': 'application/json;'
-    //         },
-    //         body: requestData
-    //     })
+    const handleAuthentication = async (authType: AuthType) => {
+        let requestData = JSON.stringify({ 
+            FirstName: "Nik",
+            LastName: "Faraday",
+            MiddleName: "Serhiyovish",
+            Birthday: "23.05.2023",
+            Email: "nikgusachenko@gmail.com",
+            Phone: "380674906517",
+            Login: "NHusachenko",
+            Password: "1111",
+        })
+        console.log(requestData);
+        let response = await fetch('https://localhost:7155/api/Authentication/SignUp', {
+            method: 'post',
+            headers: {
+                'Accept': '*/*',
+                'Host': "http://localhost:3000",
+                'Content-Type': 'application/json;'
+            },
+            body: requestData
+        })
 
-    //     let data = await response.json();
-    //     console.log(data)
-    // }
+        let data = await response.json();
+        console.log(data)
+    }
 
     // const testPostAction = async () => {
     //     let headers = new Headers({
@@ -93,7 +103,13 @@ const AuthenticationPage : React.FC = () => {
     // }
 
     const signInHandler = async () => {
-        location.href = '/'
+        console.log(loginState)
+        console.log(JSON.stringify(loginState))
+        console.log(registrationState)        
+        console.log(JSON.stringify(registrationState))
+
+
+        // location.href = '/'
         // let dataObj = {
         //     FirstName: "My first name",
         //     LastName: "my last name"
@@ -130,14 +146,16 @@ const AuthenticationPage : React.FC = () => {
                     </Flex>
                 </div>
                 <div className='card-body'>
-                    { authType == AuthType.Login ? 
-                        <LoginForm onInputChange={(inputName: string, inputValue: string) => setLoginState(state => ({...state, [inputName]: [inputValue]}))} /> : 
-                        <RegistrationForm onInputChange={(inputName: string, inputValue: string) => { setRegState(state => ({ ...state, [inputName]: inputValue })) }} 
-                        /> }
+                {authType === AuthType.Login ? 
+                    <LoginForm onInputChange={handleLoginInputChange} /> : 
+                    <RegistrationForm onInputChange={handleRegistrationInputChange} />
+                }
                 </div>
                 <div className='card-footer'>
                     <Flex align='center' justify='end'>
-                        <input type='button' className='btn btn-success' value={authType === AuthType.Login ? 'Login' : 'Sign up'} onClick={() => { signInHandler() }} />
+                        <input type='button' className='btn btn-success' value={authType === AuthType.Login ? 'Login' : 'Sign up'} onClick={() => { 
+                            authType == AuthType.Login ? signInHandler() : {}
+                        }} />
                     </Flex>
                 </div>
             </div>
