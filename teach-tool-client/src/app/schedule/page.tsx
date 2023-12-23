@@ -1,9 +1,12 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import type { Dayjs } from 'dayjs';
 import type { BadgeProps, CalendarProps } from 'antd';
 import { Badge, Calendar } from 'antd';
+import BootModal from '@/components/modal/BootModal';
+import ScheduleModalFooter from '@/components/schedule/scheduleModalFooter';
+import ScheduleModalBody from '@/components/schedule/scheduleModalBody';
 
 const getListData = (value: Dayjs) => {
   let listData;
@@ -77,30 +80,16 @@ const Schedule : React.FC = () => {
         return info.originNode;
       };
     
+      const [modalIsopen, openModal] = useState<boolean>(false);
+
       return(
         <div>
+          <BootModal open={modalIsopen} title={'This is title'} footer={<ScheduleModalFooter />} body={<ScheduleModalBody />} />
           <Calendar cellRender={cellRender} onSelect={(date, select) => {
             if (select.source == 'date') {
-              
+              openModal(!modalIsopen)
             }
           }} />
-          <div className="modal fade">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                  ...
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" className="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       );
 }

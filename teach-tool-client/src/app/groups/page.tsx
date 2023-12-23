@@ -3,6 +3,7 @@
 import React from 'react';
 import GroupBody from './groupBody';
 import GroupViewBox from './groupViewBox';
+import BootModal from '@/components/modal/BootModal';
 
 const boxStyle: React.CSSProperties = {
     width: '100%',
@@ -12,6 +13,11 @@ const boxStyle: React.CSSProperties = {
 const Groups : React.FC = () => {
     return (
         <div style={boxStyle}>
+            <BootModal open={true} onClose={() => { }} onSave={() => { }} title={'This is title'}>
+            <div>
+              
+            </div>
+          </BootModal>
             <div className='card'>
                 <div className='card-body'>
                     <div className='row'>
