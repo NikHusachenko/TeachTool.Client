@@ -9,17 +9,8 @@ interface BootModalProps {
 
 const BootModal: React.FC<BootModalProps> = ({ title, open, body, footer }) => {
 
-    let isFirstRender : boolean = true;
-
     useEffect(() => {
-        if (!isFirstRender) {
-            document.getElementById('open-event-info-modal')?.click()
-        }
-        else {
-            isFirstRender = false
-        }
-
-        console.log("Effected")
+        document.getElementById('open-event-info-modal')?.click()
     }, [ open ])
 
     return (

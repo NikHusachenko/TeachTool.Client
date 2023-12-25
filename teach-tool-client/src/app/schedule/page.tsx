@@ -6,10 +6,11 @@ import type { BadgeProps, CalendarProps } from 'antd';
 import { Badge, Calendar } from 'antd';
 import BootModal from '@/components/modal/BootModal';
 import ScheduleModalFooter from '@/components/schedule/scheduleModalFooter';
-import ScheduleModalBody from '@/components/schedule/scheduleModalBody';
+import ScheduleModalBody, { EventStatus } from '@/components/schedule/scheduleModalBody';
 
 const getListData = (value: Dayjs) => {
   let listData;
+
   switch (value.date()) {
     case 8:
       listData = [
@@ -36,6 +37,10 @@ const getListData = (value: Dayjs) => {
       break;
     default:
   }
+
+  console.log(value)
+  console.log(listData)
+  
   return listData || [];
 };
 
@@ -84,7 +89,17 @@ const Schedule : React.FC = () => {
 
       return(
         <div>
-          <BootModal open={modalIsopen} title={'This is title'} footer={<ScheduleModalFooter />} body={<ScheduleModalBody />} />
+          <BootModal open={modalIsopen} title={'This is title'} 
+            footer={
+              <ScheduleModalFooter>
+                <>
+                </>
+              </ScheduleModalFooter>
+            } 
+            body={
+              <ScheduleModalBody description={'Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description '} scheduledDate={new Date(2023, 12, 23)} type={EventStatus.InProcess} />
+            } />
+
           <Calendar cellRender={cellRender} onSelect={(date, select) => {
             if (select.source == 'date') {
               openModal(!modalIsopen)
